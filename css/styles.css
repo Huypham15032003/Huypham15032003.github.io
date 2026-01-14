@@ -824,6 +824,33 @@ section {
   line-height: 1.6;
 }
 
+.experience-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.experience-list li {
+  margin-bottom: 0.4rem;
+}
+
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  color: var(--cyber-cyan);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.inline-link:hover {
+  color: var(--highlight);
+  text-shadow: 0 0 10px rgba(162, 117, 255, 0.7);
+}
+
 /* Contact Section */
 .contact {
   background: var(--bg-secondary);
