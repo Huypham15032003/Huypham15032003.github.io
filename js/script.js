@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cursor Trail Effect (Cyberpunk particles)
     const createParticle = (x, y) => {
         const particle = document.createElement('div');
-        const color = Math.random() > 0.5 ? 'var(--cyber-cyan)' : 'var(--cyber-pink)';
+        const color = Math.random() > 0.5 ? 'var(--cyber-purple)' : 'var(--cyber-cyan)';
 
         particle.style.cssText = `
             position: fixed;
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add floating animation to avatar
     const avatar = document.querySelector('.avatar');
     if (avatar) {
-        avatar.style.animation = 'float 6s ease-in-out infinite, border-flow 4s linear infinite';
+        avatar.style.animation = 'float 6s ease-in-out infinite';
     }
 
     // Typing effect for hero subtitle
@@ -325,4 +325,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🚀 SYSTEM INITIALIZED', 'color: #00f5ff; font-size: 16px; font-weight: bold;');
     console.log('%cCyberpunk Portfolio v2.0', 'color: #ff006e; font-size: 14px;');
 });
-
