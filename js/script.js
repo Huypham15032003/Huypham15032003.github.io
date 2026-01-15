@@ -292,6 +292,40 @@ document.addEventListener('DOMContentLoaded', function() {
         avatar.style.animation = 'float 6s ease-in-out infinite';
     }
 
+    const avatarTilt = document.getElementById('avatar-tilt');
+    if (avatarTilt) {
+        const updateTilt = (clientX, clientY) => {
+            const rect = avatarTilt.getBoundingClientRect();
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / 20) * -1;
+            const rotateY = (x - centerX) / 20;
+
+            avatarTilt.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        };
+
+        avatarTilt.addEventListener('mousemove', (event) => {
+            updateTilt(event.clientX, event.clientY);
+        });
+
+        avatarTilt.addEventListener('mouseleave', () => {
+            avatarTilt.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+
+        avatarTilt.addEventListener('touchmove', (event) => {
+            const touch = event.touches[0];
+            if (touch) {
+                updateTilt(touch.clientX, touch.clientY);
+            }
+        });
+
+        avatarTilt.addEventListener('touchend', () => {
+            avatarTilt.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+    }
+
     // Typing effect for hero subtitle
     const heroSubtitle = document.querySelector('.hero-subtitle');
     if (heroSubtitle) {
