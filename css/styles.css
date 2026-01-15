@@ -28,6 +28,10 @@
   --grid-color: rgba(0, 0, 0, 0.04);
   --panel-border: rgba(0, 0, 0, 0.08);
   --panel-glow: rgba(0, 0, 0, 0.08);
+
+  /* Hero accent colors */
+  --hero-primary: #7c4dff;
+  --hero-accent: #00e5ff;
 }
 
 * {
@@ -399,7 +403,16 @@ body::after {
 
 /* Lớp nền hình khối phía sau */
 .bg-shape {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-20px);
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, var(--hero-primary), var(--hero-accent));
+  border-radius: 50% 50% 40px 40px;
+  box-shadow: 0 0 50px rgba(124, 77, 255, 0.4);
+  z-index: 1;
 }
 
 /* Ảnh Avatar PNG (Đã tách nền) */
@@ -412,13 +425,27 @@ body::after {
   width: auto;
   object-fit: contain;
   z-index: 2;
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.2));
-  transition: none;
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s;
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 /* Hiệu ứng thẻ nổi lơ lửng xung quanh */
 .floating-card {
-  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateZ(80px);
 }
 
 .hero-image-caption {
