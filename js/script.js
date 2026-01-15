@@ -99,11 +99,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillCategories = document.querySelectorAll('.skill-category');
     skillCategories.forEach((skill, index) => {
         skill.style.opacity = '0';
-        skill.style.transform = 'scale(0.8)';
+        skill.style.transform = 'translateY(20px)';
         skill.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        skill.style.transitionDelay = `${index * 0.15}s`;
+        skill.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(skill);
     });
+
+    // 3D Avatar Tilt Effect
+    const tiltContainer = document.getElementById('tilt-box');
+    if (tiltContainer) {
+        // Hàm xử lý sự kiện di chuyển chuột
+        tiltContainer.addEventListener('mousemove', (e) => {
+            const rect = tiltContainer.getBoundingClientRect();
+            // Tính toán tâm của container
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Tính góc xoay
+            const rotateX = ((y - centerY) / 20) * -1; // Đảo ngược dấu để nghiêng tự nhiên
+            const rotateY = (x - centerX) / 20;
+
+            // Áp dụng CSS Transform
+            tiltContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // Khi chuột rời khỏi, trả về vị trí cân bằng
+        tiltContainer.addEventListener('mouseleave', () => {
+            tiltContainer.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+    }
 
     // Timeline items animation
     const timelineItems = document.querySelectorAll('.timeline-item');

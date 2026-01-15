@@ -385,40 +385,109 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.avatar {
-  width: 340px;
-  height: 380px;
-  border-radius: 18px;
-  border: 1px solid var(--panel-border);
-  padding: 10px;
-  background: linear-gradient(180deg, rgba(154, 107, 255, 0.2), rgba(10, 8, 22, 0.6));
-  animation: float 6s ease-in-out infinite;
-  box-shadow: 0 0 35px var(--shadow-purple), inset 0 0 30px rgba(0, 0, 0, 0.45);
   position: relative;
+  height: 600px;
+  perspective: 1000px;
 }
 
-.avatar::before {
-  content: '';
+/* Container chứa hiệu ứng nghiêng */
+.avatar-container {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+/* Lớp nền hình khối phía sau */
+.bg-shape {
   position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: -12px;
-  border-radius: 24px;
-  border: 1px solid rgba(191, 163, 255, 0.4);
-  opacity: 0.7;
-  animation: pulse 3s ease-in-out infinite;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-20px);
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, var(--cyber-pink), var(--cyber-cyan));
+  border-radius: 50% 50% 40px 40px;
+  box-shadow: 0 0 50px rgba(124, 77, 255, 0.4);
+  z-index: 1;
 }
 
-.avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  background: var(--bg-card);
-  filter: saturate(1.1) contrast(1.05);
+/* Ảnh Avatar PNG (Đã tách nền) */
+.avatar-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateZ(50px) scale(1.15);
+  height: 480px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.5));
+  transition: transform 0.3s;
+}
+
+/* Hiệu ứng thẻ nổi lơ lửng xung quanh */
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transform: translateZ(80px);
+}
+
+.card-1 { top: 80px; left: -20px; animation: float-card 3s ease-in-out infinite; }
+.card-2 { bottom: 60px; right: -30px; animation: float-card 4s ease-in-out infinite reverse; }
+
+.card-icon {
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+/* Animation lơ lửng - renamed to avoid conflict with existing float */
+@keyframes float-card {
+  0% { transform: translateZ(80px) translateY(0px); }
+  50% { transform: translateZ(80px) translateY(-15px); }
+  100% { transform: translateZ(80px) translateY(0px); }
+}
+
+@media (max-width: 968px) {
+  .hero-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+
+  .avatar-container {
+    width: 320px;
+    height: 400px;
+  }
+
+  .bg-shape {
+    width: 220px;
+    height: 220px;
+  }
+
+  .avatar-img {
+    height: 380px;
+  }
+
+  .floating-card {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+
+  .card-icon {
+    font-size: 1rem;
+  }
 }
 
 /* Sections */
@@ -1028,9 +1097,15 @@ section {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+  .hero {
+    align-items: center;
+    padding: 3rem 0;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    align-items: center;
   }
 
   .hero-title {
@@ -1039,11 +1114,23 @@ section {
 
   .hero-image {
     order: -1;
+    margin-bottom: 2rem;
+    height: 450px;
+  }
+
+  .hero-text {
+    z-index: 1;
+    margin-bottom: 0;
   }
 
   .avatar {
     width: 250px;
     height: 250px;
+  }
+
+  .about {
+    margin-top: 0;
+    padding-top: 3rem !important;
   }
 
   .about-stats {
