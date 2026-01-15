@@ -388,7 +388,7 @@ body::after {
   flex-direction: column;
   position: relative;
   height: 600px;
-  perspective: 1000px;
+  perspective: none;
 }
 
 /* Container chứa hiệu ứng nghiêng */
@@ -396,9 +396,9 @@ body::after {
   width: 400px;
   height: 500px;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.1s;
-  cursor: pointer;
+  transform-style: flat;
+  transition: none;
+  cursor: default;
 }
 
 /* Lớp nền hình khối phía sau */
@@ -411,7 +411,7 @@ body::after {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateZ(50px) scale(1.15);
+  transform: translateX(-50%);
   height: 480px;
   width: auto;
   object-fit: contain;
@@ -1118,7 +1118,6 @@ section {
 
   .hero-image {
     order: -1;
-    margin-bottom: 2rem;
     height: 450px;
   }
 
