@@ -450,7 +450,7 @@ body::after {
 }
 
 .card-1 { top: 80px; left: -20px; animation: float-card 3s ease-in-out infinite; }
-.card-2 { bottom: 60px; right: -30px; animation: float-card 4s ease-in-out infinite reverse; }
+.card-2 { bottom: 60px; right: -20px; animation: float-card 4s ease-in-out infinite reverse; }
 
 .card-icon {
   color: #FFD700;
