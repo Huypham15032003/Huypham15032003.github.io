@@ -381,6 +381,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: relative;
   height: 600px;
   perspective: none;
@@ -418,6 +419,16 @@ body::after {
 /* Hiệu ứng thẻ nổi lơ lửng xung quanh */
 .floating-card {
   display: none;
+}
+
+.hero-image-caption {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-align: center;
 }
 
 .card-1 { top: 80px; left: -20px; animation: float-card 3s ease-in-out infinite; }
