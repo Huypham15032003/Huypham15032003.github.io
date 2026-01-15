@@ -403,16 +403,7 @@ body::after {
 
 /* Lớp nền hình khối phía sau */
 .bg-shape {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateZ(-20px);
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(135deg, var(--hero-primary), var(--hero-accent));
-  border-radius: 50% 50% 40px 40px;
-  box-shadow: 0 0 50px rgba(124, 77, 255, 0.4);
-  z-index: 1;
+  display: none;
 }
 
 /* Ảnh Avatar PNG (Đã tách nền) */
