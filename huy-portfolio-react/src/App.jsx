@@ -7,6 +7,7 @@ import {
   FileText, BarChart3, Workflow, CheckCircle2,
   Calendar, Mail, Phone, Users
 } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 // --- REUSABLE COMPONENTS ---
 
@@ -467,8 +468,8 @@ const projectsData = [
   },
   {
     name: "Business Trend Analysis",
-    category: "Data Analysis / Dashboard",
-    desc: "Analyzed business trends for a children’s goods company from 2020–2023 using sales data dashboards in Power BI.",
+    category: "Academic Project",
+    desc: "University project analyzing business trends via interactive dashboards. Focused on data analysis, visualizing raw data into actionable insights, and understanding business processes.",
     role: "Data Analyst",
     contribution: ["Built sales dashboard analysis", "Identified revenue and product performance changes", "Designed presentation materials in Canva", "Summarized insights for business review"],
     tools: ["Power BI", "Canva", "Data Analysis"],
@@ -477,23 +478,23 @@ const projectsData = [
   },
   {
     name: "CRM System",
-    category: "Customer Relationship Management",
-    desc: "CRM platform to manage customers, contracts, marketing campaigns, user feedback, and maintenance schedules to improve customer service quality and business performance.",
-    role: "Product Module Lead",
-    contribution: ["In charge of the Product module", "Managing timeline progress and support tickets", "Designed and executed unit tests", "Integration testing execution"],
-    tools: ["Java Servlet", "JavaScript", "CSS", "Bootstrap", "MySQL"],
-    tags: ["CRM", "Product Module", "Testing", "Java Servlet", "MySQL", "Bootstrap"],
+    category: "Academic Project",
+    desc: "Academic project simulating CRM system development. Performed requirement analysis, created system documentation, managed project timelines, and supported testing routines.",
+    role: "Business Analyst / Module Lead",
+    contribution: ["Requirement analysis for the Product module", "Created system documentation", "Managed timeline progress and support tickets", "Supported testing routines"],
+    tools: ["Requirement Analysis", "Documentation", "Testing", "MySQL"],
+    tags: ["Requirement Analysis", "Documentation", "Testing", "MySQL", "Bootstrap"],
     link: "https://github.com/nguyendat1202/ISP490_SU25_G4"
   },
   {
     name: "Online Bookstore Web App",
-    category: "E-commerce Web Application",
-    desc: "E-commerce web application that allows users to browse and purchase books online across multiple categories.",
+    category: "University Project",
+    desc: "University project building an e-commerce platform. Focused on requirement analysis, designing the database, and documenting user workflows for browsing and purchasing books.",
     role: "Developer / Analyst",
-    contribution: ["Database schema design", "Shopping cart logic implementation", "Frontend layout integration", "Backend service connections"],
-    tools: ["HTML/JSP", "CSS", "JavaScript", "Bootstrap", "Java Servlets", "SQL Server"],
-    tags: ["E-commerce", "Java Servlets", "SQL Server", "Bootstrap", "Web App"],
-    link: "https://github.com/huy150303/BookStorePRJ_302"
+    contribution: ["Requirement analysis", "Database schema design", "Documented user workflows", "Frontend layout integration"],
+    tools: ["Requirement Analysis", "Database Design", "Process Documentation", "SQL Server"],
+    tags: ["Requirement Analysis", "Database Design", "Process Documentation", "SQL Server"],
+    link: "https://github.com/Huypham15032003/BookStorePRJ_302"
   }
 ];
 
@@ -627,6 +628,14 @@ function ContactSection() {
             <MapPin className="text-purple-400" />
             <span className="font-medium text-base sm:text-lg">Hanoi, Vietnam</span>
           </div>
+          <a href="https://www.linkedin.com/in/huy-pham-89b0a33a7" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors outline-none cursor-pointer">
+            <FaLinkedin className="text-blue-500 text-2xl" />
+            <span className="font-medium text-base sm:text-lg">LinkedIn</span>
+          </a>
+          <a href="https://github.com/Huypham15032003" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors outline-none cursor-pointer">
+            <FaGithub className="text-white text-2xl" />
+            <span className="font-medium text-base sm:text-lg">GitHub</span>
+          </a>
         </div>
 
         <a href="mailto:phamhaihuy150303@gmail.com"><ContactButton /></a>
