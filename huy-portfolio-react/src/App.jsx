@@ -118,7 +118,7 @@ function AnimatedText({ text, className = "", style }) {
   const chars = text.split("");
 
   return (
-    <p ref={ref} className={`block whitespace-normal break-words overflow-visible text-center ${className}`} style={style}>
+    <p ref={ref} className={`block break-words overflow-visible text-center ${className}`} style={style}>
       {chars.map((char, i) => {
         const start = i / chars.length;
         const end = start + (1 / chars.length);
@@ -337,11 +337,11 @@ function AboutSection() {
           </h2>
         </FadeIn>
         <div className="max-w-[760px] md:max-w-[900px] w-full flex flex-col items-center gap-8 sm:gap-10 md:gap-12 overflow-visible">
-          <AnimatedText 
-            text="Information Systems graduate with experience as a Business Analyst, specializing in requirements analysis, process standardization, data analysis, and cross-functional collaboration with software development teams. Currently transitioning into Website SEO, with a focus on Technical SEO, website performance analysis, and user experience optimization.
-Possess a foundational knowledge of HTML, CSS, JavaScript, SQL Server, and Power BI, along with experience developing an e-commerce website for online book sales. Seeking to apply analytical thinking, technical collaboration skills, and an understanding of website structure in an SEO Fresher position.
-" 
-            className="text-[#D7E2EA] font-medium leading-relaxed text-center text-base sm:text-lg md:text-xl lg:text-2xl whitespace-normal break-words overflow-visible mx-auto"
+          <AnimatedText
+            text={`Information Systems graduate with experience as a Business Analyst, specializing in requirements analysis, process standardization, data analysis, and cross-functional collaboration with software development teams. Currently transitioning into Website SEO, with a focus on Technical SEO, website performance analysis, and user experience optimization.
+
+Possess a foundational knowledge of HTML, CSS, JavaScript, SQL Server, and Power BI, along with experience developing an e-commerce website for online book sales. Seeking to apply analytical thinking, technical collaboration skills, and an understanding of website structure in an SEO Fresher position.`}
+            className="text-[#D7E2EA] font-medium leading-relaxed text-center text-base sm:text-lg md:text-xl lg:text-2xl whitespace-pre-line break-words overflow-visible mx-auto"
           />
           <div onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className="cursor-pointer relative z-20">
             <ContactButton />
