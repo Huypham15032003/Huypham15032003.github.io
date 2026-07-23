@@ -338,7 +338,9 @@ function AboutSection() {
         </FadeIn>
         <div className="max-w-[760px] md:max-w-[900px] w-full flex flex-col items-center gap-8 sm:gap-10 md:gap-12 overflow-visible">
           <AnimatedText 
-            text="I am a recent Information Systems graduate and Fresher Business Analyst with experience in requirement documentation, stakeholder communication, process analysis, and UAT support. I have worked with SRS documents, User Stories, Use Cases, Acceptance Criteria, and process flows in software development projects. I am familiar with Lark, Draw.io, SQL Server, Power BI, and Figma. I am seeking a Business Analyst position where I can contribute to analyzing business needs, improving processes, and supporting development teams in delivering practical solutions." 
+            text="Information Systems graduate with experience as a Business Analyst, specializing in requirements analysis, process standardization, data analysis, and cross-functional collaboration with software development teams. Currently transitioning into Website SEO, with a focus on Technical SEO, website performance analysis, and user experience optimization.
+Possess a foundational knowledge of HTML, CSS, JavaScript, SQL Server, and Power BI, along with experience developing an e-commerce website for online book sales. Seeking to apply analytical thinking, technical collaboration skills, and an understanding of website structure in an SEO Fresher position.
+" 
             className="text-[#D7E2EA] font-medium leading-relaxed text-center text-base sm:text-lg md:text-xl lg:text-2xl whitespace-normal break-words overflow-visible mx-auto"
           />
           <div onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className="cursor-pointer relative z-20">
